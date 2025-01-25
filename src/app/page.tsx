@@ -15,7 +15,7 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="w-full overflow-hidden">
+    <div className="w-full">
       <h1 className="text-4xl font-bold">
         Hi, I&apos;m Akmal{" "}
         <span className="inline-block animate-shake origin-[75%_75%]">👋</span>

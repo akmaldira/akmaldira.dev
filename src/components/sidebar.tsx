@@ -55,7 +55,13 @@ const items = [
   },
 ];
 
-export default function Sidebar() {
+export default function Sidebar({
+  className,
+  onItemClick,
+}: {
+  className?: string;
+  onItemClick?: () => void;
+}) {
   const [hideAvatar, setHideAvatar] = React.useState(false);
 
   const handleScroll = React.useCallback(
@@ -76,12 +82,17 @@ export default function Sidebar() {
   }, [handleScroll]);
 
   return (
-    <aside className="h-[85vh] sticky top-14 w-full min-w-60 max-w-60">
+    <aside
+      className={cn(
+        "h-[85vh] sticky top-0 flex-col gap-4 w-full max-w-60 pt-4",
+        className
+      )}
+    >
       <div>
         <Avatar
           className={cn(
             "w-20 h-20 transition-all duration-700",
-            hideAvatar && "w-0 h-0"
+            hideAvatar && "w-0 h-0 mb-6"
           )}
         >
           <AvatarImage src="https://github.com/shadcn.png" />
@@ -107,6 +118,7 @@ export default function Sidebar() {
           icon={item.icon}
           href={item.href}
           className="my-1"
+          onItemClick={onItemClick}
         />
       ))}
       <Separator className="my-6" />

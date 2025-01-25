@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Container from "@/components/container";
 import ThemeProvider from "@/components/theme-provider";
-import Sidebar from "@/components/sidebar";
 import { Karla } from "next/font/google";
+import Header from "@/components/header";
 
 const karla = Karla({
   subsets: ["latin"],
@@ -31,9 +31,11 @@ export default async function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <Container className="flex gap-6 pt-14">
-            <Sidebar />
-            {children}
+          <Container className="flex flex-col items-start md:flex-row gap-6">
+            <Header />
+            <main className="w-full overflow-x-hidden pt-20 md:pt-4">
+              {children}
+            </main>
           </Container>
         </ThemeProvider>
       </body>

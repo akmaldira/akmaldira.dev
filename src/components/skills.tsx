@@ -1,5 +1,9 @@
 import Image from "next/image";
-import { Carousel, CarouselContent, CarouselItem } from "./ui/carousel";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+} from "@/components/ui/carousel";
 import Autoscroll from "embla-carousel-auto-scroll";
 import { skiil_list } from "@/lib/const";
 

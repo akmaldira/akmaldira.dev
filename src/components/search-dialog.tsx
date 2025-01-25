@@ -43,7 +43,11 @@ export default function SearchDialog({ className }: { className?: string }) {
           <span className="text-xs">⌘</span>K
         </kbd>
       </Button>
-      <CommandDialog open={openSearch} onOpenChange={setOpenSearch}>
+      <CommandDialog
+        open={openSearch}
+        onOpenChange={setOpenSearch}
+        contentClassName="w-11/12 sm:max-w-md"
+      >
         <DialogTitle className="hidden"></DialogTitle>
         <DialogDescription className="hidden"></DialogDescription>
         <CommandInput placeholder="Type a command or search..." />
