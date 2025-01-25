@@ -9,6 +9,16 @@ export default {
   ],
   theme: {
   	extend: {
+      keyframes: {
+        shake: {
+          "0%, 50%": { transform: "rotate(0deg)" },
+          "10%, 30%": { transform: "rotate(5deg)" },
+          "20%, 40%": { transform: "rotate(0deg)" },
+        },
+      },
+      animation: {
+        shake: "shake 3s ease-in-out infinite",
+      },
   		colors: {
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
